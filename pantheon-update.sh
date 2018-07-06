@@ -1,4 +1,17 @@
 #!/bin/bash
+##steps:
+    # Authenticate via the Pantheon CLI (Terminus)
+    # Choose which site to update
+    # The script makes a full backup of production database and files
+    # Creates a new Multidev environment where it applies updates
+    # Applies all plugin, module and theme updates
+    # Gives you the Multidev URL when you can review your site
+    # Commits the updates in Git and merges into master
+    # Pushes the updates to all Pantheon environments (Dev, Test and Live)
+    # Cleares caches
+    # Runs updb
+    # Cleans up by deleting the Multidev environment
+
 
 terminus_auth() {
 	response=`terminus auth whoami`
