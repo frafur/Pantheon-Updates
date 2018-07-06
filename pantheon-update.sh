@@ -58,7 +58,7 @@ multidev_update_prep() {
 
 	envExist=`terminus site environments --site=${SITENAME} | grep "${MDENV}"`
 	if [ -z "$envExist" ]; then
-		echo "Creating multidev hotfix-up enironment..."
+		echo "Creating multidev hotfix-up environment..."
 		read -p "Pull down db from which environment? (dev/test/live) "	FROMENV
 		terminus site create-env --to-env=${MDENV} --from-env=${FROMENV} --site=${SITENAME}
 		if [ $? = 1 ]; then
